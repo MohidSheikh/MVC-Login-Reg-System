@@ -1,0 +1,55 @@
+﻿@model Login_RegSystem.Models.tbluser_reg
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="border p-4 rounded shadow-sm bg-white" style="width: 350px;">
+        <h4 class="mb-3 text-center">Register</h4>
+
+        <div class="mb-2">
+            @Html.LabelFor(m => m.firstname)
+            @Html.TextBoxFor(m => m.firstname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.firstname, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-2">
+            @Html.LabelFor(m => m.lastname)
+            @Html.TextBoxFor(m => m.lastname, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.lastname, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-2">
+            @Html.LabelFor(m => m.email)
+            @Html.TextBoxFor(m => m.email, new { @class = "form-control", type = "email" })
+            @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-2">
+            @Html.LabelFor(m => m.password)
+            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(m => m.age)
+            @Html.TextBoxFor(m => m.age, new { @class = "form-control", type = "number" })
+            @Html.ValidationMessageFor(m => m.age, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Register!</button>
+        </div>
+        <div class="text-center mt-2">
+            <a href="@Url.Action("Login", "Home")" class="text-decoration-none">Already have an account? Login</a>
+        </div>
+
+    </div>
+</div>
+}
+<p>@ViewBag.msg</p>

@@ -1,0 +1,24 @@
+﻿@model Login_RegSystem.Models.tbluser_reg
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="border rounded shadow-sm p-4 bg-white">
+                <h4 class="mb-3 text-center text-primary">Welcome, @Model.firstname @Model.lastname!</h4>
+
+                <ul class="list-group mb-3">
+                    <li class="list-group-item"><strong>Email:</strong> @Model.email</li>
+                    <li class="list-group-item"><strong>Age:</strong> @Model.age</li>
+                </ul>
+
+                <div class="text-center">
+                    @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "btn btn-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

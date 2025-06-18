@@ -1,0 +1,38 @@
+﻿@model Login_RegSystem.Models.tbluser_reg
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="border p-3 rounded shadow-sm bg-white" style="width: 350px;">
+        <h4 class="mb-3 text-center">Login</h4>
+
+        <div class="mb-2">
+            <label>Email</label>
+            <input type="email" name="mail" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="pass" class="form-control" required />
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+
+        <div class="text-center mt-2">
+            <a href="@Url.Action("Register", "Home")" class="text-decoration-none">
+                Don't have an account? Sign Up
+            </a>
+        </div>
+
+        <p class="text-danger text-center mt-2">@ViewBag.msg</p>
+    </div>
+</div>
+}

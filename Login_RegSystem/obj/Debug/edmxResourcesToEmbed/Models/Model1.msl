@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LOG_REGSYSTEMModelStoreContainer" CdmEntityContainer="LOG_REGSYSTEMEntities">
+    <EntitySetMapping Name="tbluser_reg">
+      <EntityTypeMapping TypeName="LOG_REGSYSTEMModel.tbluser_reg">
+        <MappingFragment StoreEntitySet="tbluser_reg">
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
